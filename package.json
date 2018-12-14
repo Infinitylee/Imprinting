@@ -38,7 +38,7 @@
     "eject": "react-scripts eject",
     "electron-start": "electron . --env dev",
     "electron-test": "electron . --env build",
-    "electron-build": "electron-packager . --env build 印迹 --all --out ./output --arch=x64 ----app-version 2018.12.07 --electron-version ^3.0.10  --icon=./public/favicon.ico --no-package-manager --ignore=node_modules"
+    "electron-build": "electron-packager . --env build 印迹 --all --out ./output --arch=x64 ----app-version 20181215 --electron-version ^3.0.10  --icon=./public/favicon.ico --no-package-manager --ignore=node_modules"
   },
   "eslintConfig": {
     "extends": "react-app"
