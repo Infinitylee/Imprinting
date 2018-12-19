@@ -5,11 +5,11 @@
   "main": "main.js",
   "homepage": "./",
   "dependencies": {
-    "ajv": "^6.5.5",
+    "ajv": "^6.6.2",
     "antd": "^3.11.2",
     "babel-polyfill": "^6.26.0",
     "crypto-js": "^3.1.9-1",
-    "electron": "^3.0.11",
+    "electron": "^3.0.13",
     "electron-packager": "^12.2.0",
     "electron-reload": "^1.3.0",
     "electron-require": "^0.3.0",

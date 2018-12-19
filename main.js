@@ -44,9 +44,9 @@ let createWindow = () => {
   }
 
   // 打开开发者工具
-  if (argv && argv[1] == 'dev') {
+  //if (argv && argv[1] == 'dev') {
     mainWindow.webContents.openDevTools();
-  }
+  //}
 
   // 当 window 被关闭,这个事件会被触发
   mainWindow.on('closed', () => {
@@ -280,6 +280,7 @@ ipcMain.on('IMAGE', (event, arg) => {
     // 读取下载的图片并转换成base64
     let imageBuf = fs.readFileSync(arg.url.replace('file:///', ''));
     // 下载成功 发送消息事件
-    event.sender.send('IMAGE_END', {source: arg.id, target: 'data:image/jpeg;base64,' + imageBuf.toString("base64")});
+    event.returnValue = 'data:image/jpeg;base64,' + imageBuf.toString("base64");
+    //event.sender.send('IMAGE_END', {source: arg.id, target: 'data:image/jpeg;base64,' + imageBuf.toString("base64")});
   }
 });

@@ -217,19 +217,21 @@ class WorkPart extends Component {
         let id = imgSrc;
         // 如果是本地file文件,则替换避免v8引擎安全限制
         if (-1 !== imgSrc.indexOf('file:///')) {
-          id = Uuid();
-          data = data.replace(imgSrc, id);
+          // 由于没有网络延迟,取消异步加载,改为直接从本地同步加载,避免://0问题
+          let imageData = ipcRenderer.sendSync(Ipc.IMAGE, { url: imgSrc });
+          // 替代字符串
+          data = data.replace(imgSrc, imageData);
         } else {
           // 提取并转义src
           imgSrc = this.escapeUrl(imgSrc);
+          // 添加数据
+          return tempImageSrcDataList.push({id: id, src: imgSrc});
         }
-        // 添加数据
-        return tempImageSrcDataList.push({id: id, src: imgSrc});
       });
     }
     // part 3 --- 请求后台下载图片并转换成base64
     tempImageSrcDataList.map((item) => {
-      let fileName = Uuid();
+      let fileName = String(Uuid());
       // 发送下载清透
       return ipcRenderer.send(Ipc.IMAGE, {
         id: item.id,
