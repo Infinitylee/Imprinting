@@ -1,0 +1,92 @@
+@import '~antd/dist/antd.css';
+@import '~quill/dist/quill.snow.css';
+
+body {
+    min-width: 1280px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #f0f2f5;
+}
+
+.root {
+    height: 100%;
+}
+
+/* 输入框样式取消圆角 */
+.ant-input {
+    border-radius: 0px;
+}
+
+/* 模态框样式取消框外遮罩颜色 */
+.ant-modal-mask {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* 模态框样式框头间距 */
+.ant-modal-header {
+    padding: 12px;
+}
+
+/* 模态框样式框体内容间距 */
+.ant-modal-body {
+    padding: 12px;
+}
+
+/* 模态框样式框脚间距 */
+.ant-modal-footer {
+    padding: 12px;
+}
+
+/* 模态 确认 框样式框体内容间距 */
+.ant-modal-confirm .ant-modal-body {
+    padding: 12px;
+}
+
+/* 模态框样式取消圆角 */
+.ant-modal-content {
+    border-radius: 0px;
+}
+
+/* 按钮样式取消圆角 */
+.ant-btn {
+    border-radius: 0px;
+}
+
+/* 鱼骨架标题颜色 */
+.ant-skeleton-content .ant-skeleton-title {
+    background: #d2d2d2;
+}
+
+/* 鱼骨架内容间距 */
+.ant-skeleton-content .ant-skeleton-title + .ant-skeleton-paragraph {
+    padding-left: 0px;
+}
+
+/* 鱼骨架内容颜色 */
+.ant-skeleton-content .ant-skeleton-paragraph > li {
+    background: #d2d2d2;
+}
+
+/* 单选组框样式未选择背景透明 */
+.ant-radio-button-wrapper {
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+}
+
+/* 单选组框样式已选择样式 */
+.ant-radio-button-wrapper-checked {
+    background: #fff;
+    border-color: #fff;
+    color: #3e3e3e;
+    -webkit-box-shadow: -1px 0 0 0 #fff;
+            box-shadow: -1px 0 0 0 #fff;
+    z-index: 1;
+}
+
+/* 单选组框样式已选择样式 */
+.ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+    background: #fff;
+    border-color: #fff;
+    color: #3e3e3e;
+}
